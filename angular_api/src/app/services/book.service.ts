@@ -14,4 +14,8 @@ export class BookService {
   getAllBooks():Observable<Book[]> {
     return this.http.get<Book[]>(`${this.baseUrl}book/getbooks`)
   }
+
+  addBook(b: Book) {
+    this.http.post<any>(this.baseUrl + "book/addbook", b)
+  }
 }

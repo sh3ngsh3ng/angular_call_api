@@ -9,6 +9,8 @@ import { Book } from 'src/app/classes/book';
 export class BookComponent implements OnInit {
 
   books: Book[] | undefined;
+  newBook!: Book;
+  
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
