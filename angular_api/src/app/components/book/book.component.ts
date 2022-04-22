@@ -24,5 +24,10 @@ export class BookComponent implements OnInit {
     this.router.navigate(['update-book', id])
   }
 
+  deleteBook(id: number| undefined) {
+    console.log("delete book called")
+    this.bookService.deleteBook(id).subscribe((data) => console.log("data deleted"))
+    
+  }
 
 }

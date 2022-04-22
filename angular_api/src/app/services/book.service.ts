@@ -27,5 +27,10 @@ export class BookService {
     return this.http.put<any>(this.baseUrl + "book/updatebook/" + id, book)
   }
 
+  deleteBook(id: number | undefined):Observable<Object> {
+    console.log("book service delete book called")
+    return this.http.delete<any>(this.baseUrl + "book/deletebook/" + id)
+  }
+
 
 }
