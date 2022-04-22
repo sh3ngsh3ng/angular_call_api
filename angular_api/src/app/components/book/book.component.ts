@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/classes/book';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
@@ -11,13 +12,16 @@ export class BookComponent implements OnInit {
   books: Book[] | undefined;
   newBook!: Book;
   
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
     this.bookService.getAllBooks().subscribe((data:Book[])=>{
       this.books=data;
-      console.log(data);
     })
+  }
+
+  updateBook(id: number | undefined) {
+    this.router.navigate(['update-book', id])
   }
 
 

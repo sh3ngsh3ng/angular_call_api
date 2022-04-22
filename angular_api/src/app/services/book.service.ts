@@ -18,4 +18,14 @@ export class BookService {
   addBook(b: Book) {
     this.http.post<any>(this.baseUrl + "book/addbook", b)
   }
+
+  getBookById(id: number|undefined):Observable<Book> {
+    return this.http.get<any>(this.baseUrl + "book/getbooks/" + id)
+  }
+
+  updateBook(id: number|undefined, book: Book):Observable<Object> {
+    return this.http.put<any>(this.baseUrl + "book/updatebook/" + id, book)
+  }
+
+
 }

@@ -5,12 +5,14 @@
             <th>Book ID</th>
             <th>Title</th>
             <th>Author</th>
+            <th>Actions</th>
         </thead>
         <tbody >
             <tr *ngFor="let book of books">
                 <td>{{book.id}}</td>
                 <td>{{book.title}}</td>
                 <td>{{book.author}}</td>
+                <td><button (click)="updateBook(book.id)">Update</button></td>
             </tr>
         </tbody>
     </table>

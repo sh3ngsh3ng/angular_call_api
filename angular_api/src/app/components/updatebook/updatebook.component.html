@@ -1,0 +1,24 @@
+<div>
+    <h3>Update Book Details</h3>
+    <form (ngSubmit)="onSubmit()">
+        <table>
+            <tr>
+                <td>Book ID</td>
+                <td><input id="id" [(ngModel)]="book.id" name="id"></td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td><input id="tile" [(ngModel)]="book.title" name="title"></td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td><input id="author" [(ngModel)]="book.author" name="author"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Update</button></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
